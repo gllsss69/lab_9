@@ -17,6 +17,14 @@ namespace lab_9
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+
+            if (!radioBus.Checked && !radioTrolley.Checked && !radioMetro.Checked)
+            {
+                MessageBox.Show("Будь ласка, виберіть тип транспорту.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            } 
+
+
             decimal fare = GetSelectedFare();
 
             if (chkPrivileged.Checked)
